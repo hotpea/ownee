@@ -1,8 +1,41 @@
-<h1>Function#index</h1>
+<h1>Listagem de cargos</h1>
 
-<% @functions.each do |function| -%>
-  <%= function.id %>
-  <%= function.name %>
-<% end -%>
+<table>
+  <tr>
+    <th>id</th>
+    <th>Nome</th>
+    <th>Ações</th>
+  </tr>
+  <% @functions.each do |function| -%>
+    <tr>
+      <td><%= function.id %></td>
+      <td><%= function.name %></td>
+      <td>
+        <a href="/function/edit/<%= function.id %>">
+          <button>
+            Editar
+          </button>
+        </a>
+        <a href="/function/delete/<%= function.id %>">
+          <button>
+            Excluir
+          </button>
+        </a>
+      </td>
+    </tr>
+  <% end -%>
+</table>
 
-<p>Find me in app/views/function/index.html.erb</p>
+<br>
+
+<a href="/function/add">
+  <button>
+    Novo cargo
+  </button>
+</a>
+
+<a href="/">
+  <button>
+    Dados gerais
+  </button>
+</a>

@@ -1,2 +1,48 @@
-<h1>Employee#index</h1>
-<p>Find me in app/views/employee/index.html.erb</p>
+<h1>Listagem de funcionários</h1>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>Nome</th>
+    <th>Data de Nascimento</th>
+    <th>Salário</th>
+    <th>Cargo</th>
+    <th>Ações</th>
+  </tr>
+  <% @employees.each do |employee| -%>
+    <tr>
+      <td><%= employee.id %></td>
+      <td><%= employee.name %></td>
+      <td><%= employee.birth %></td>
+      <td><%= employee.salary %></td>
+      <td><%= employee.function.name %></td>
+      <td>
+        <a href="/employee/edit/<%= employee.id %>">
+          <button>
+            Editar
+          </button>
+        </a>
+
+        <a href="/employee/delete/<%= employee.id %>">
+          <button>
+            Excluir
+          </button>
+        </a>
+      </td>
+    </tr>
+  <% end -%>
+</table>
+
+<br>
+
+<a href="/employee/add">
+  <button>
+    Novo funcionário
+  </button>
+</a>
+
+<a href="/">
+  <button>
+    Dados gerais
+  </button>
+</a>

@@ -1,2 +1,18 @@
-<h1>Department#add</h1>
-<p>Find me in app/views/department/add.html.erb</p>
+<h1>Novo departamento</h1>
+
+<form action="/department/save" method="post">
+  Nome<br>
+  <input type="text" name="name"><br>
+  Gerente<br>
+  <select name="employee_id">
+    <% @employees.each do |employee| -%>
+      <option value="<%= employee.id %>"> <%= employee.name %> </option>
+    <% end %>
+  </select>
+
+  <br><br>
+
+  <input type="submit" value="Salvar">
+</form>
+
+

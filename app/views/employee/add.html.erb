@@ -1,2 +1,20 @@
-<h1>Employee#add</h1>
-<p>Find me in app/views/employee/add.html.erb</p>
+<h1>Novo funcionário</h1>
+
+<form action="/employee/save" method="post">
+  Nome<br>
+  <input type="text" name="name"><br>
+  Data de nascimento<br>
+  <input type="date" name="birth"><br>
+  Salário<br>
+  <input type="number" min="0.00" max="10000.00" step="0.01" name="salary" ><br>
+  Cargo<br>
+  <select name="function_id">
+    <% @functions.each do |function| -%>
+      <option value="<%= function.id %>"> <%= function.name %> </option>
+    <% end %>
+  </select>
+  <br><br>
+  <input type="submit" value="Salvar">
+</form>
+
+

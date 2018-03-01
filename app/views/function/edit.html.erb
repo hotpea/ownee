@@ -1,2 +1,12 @@
-<h1>Function#edit</h1>
-<p>Find me in app/views/function/edit.html.erb</p>
+<h1>Editar cargo</h1>
+
+<form action="/function/save" method="post">
+  id:<br>
+  <input type="text" name="id" value="<%= @function.id %>" readonly="readonly"><br>
+  Nome<br>
+  <input type="text" name="name" value="<%= @function.name %>">
+  <br><br>
+  <input type="submit" value="Salvar">
+</form>
+
+
