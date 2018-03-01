@@ -13,7 +13,7 @@
   <select name="department_id">
     <option value="0"> .: SELECIONE :. </option>
     <% @departments.each do |department| -%>
-      <% if @employee.function_id == department.id %>
+      <% if @employee.department_id == department.id %>
         <option value="<%= department.id %>" selected="selected" > <%= department.name %> </option>
       <% else %>
         <option value="<%= department.id %>"> <%= department.name %> </option>
