@@ -1,24 +1,23 @@
-# README
+# Ownee teste
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sistema de funcionários e departamentos com algumas validações seguindo orientações para teste de contratação para vaga de desenvolvedor na Startup Ownee
 
-Things you may want to cover:
+Algumas regras no sistema:
 
-* Ruby version
+* funcionários pertencem a um departamento
 
-* System dependencies
+* um departamento pode ter um gerente
 
-* Configuration
+* funcionários não podem ter menos de 18 anos
 
-* Database creation
+* somente funcionários gerente de departamento podem ganhar mais de R$10.000,00
 
-* Database initialization
+# Para rodar o sistema
 
-* How to run the test suite
+Em um ambiente Ruby devidamente configurado, baixe o projeto e em sua raiz execute 
 
-* Services (job queues, cache servers, search engines, etc.)
+$ rails db:migrate
 
-* Deployment instructions
+e em seguida
 
-* ...
+$ rails server
