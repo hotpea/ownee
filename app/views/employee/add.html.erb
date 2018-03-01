@@ -13,7 +13,13 @@
       <option value="<%= department.id %>"> <%= department.name %> </option>
     <% end %>
   </select>
-  <br><br>
+
+  <br>
+  <label class="error"><%= flash[:error] %></label>
+  <br>
+  <label class="msg"><%= flash[:msg] %></label>
+  <br>
+
   <input type="submit" value="Salvar">
   <a href="/employee/index">
     <button>
