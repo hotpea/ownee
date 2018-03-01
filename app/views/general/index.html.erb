@@ -1,8 +1,14 @@
 <h1>Dados gerais</h1>
 
-<a href="/function/index">
+<!--<a href="/function/index">-->
+  <!--<button>-->
+    <!--Cargos-->
+  <!--</button>-->
+<!--</a>-->
+
+<a href="/department/index">
   <button>
-    Cargos
+    Departamentos
   </button>
 </a>
 
@@ -12,10 +18,23 @@
   </button>
 </a>
 
-<a href="/department/index">
-  <button>
-    Departamentos
-  </button>
-</a>
+<table>
+  <tr>
+    <th>Departamento</th>
+    <th>Soma de salários</th>
+    <th>Percentagem do total</th>
+  </tr>
+  <% @data.each do |data| -%>
+    <%= data.inspect %>
+
+      <td><%= data[0].name %></td>
+      <td><%= data[1] %></td>
+      <td><%= (data[1].to_f / @allDepartmentsSum.to_f * 100.0).round %></td>
+    </tr>
+  <% end -%>
+</table>
+
+<%= @allDepartmentsSum %>
+
 
 <p>Find me in app/views/general/index.html.erb</p>

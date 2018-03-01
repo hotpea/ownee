@@ -18,7 +18,10 @@ class DepartmentController < ApplicationController
     end
 
     @department.name = params[:name]
-    @department.employee_id = params[:employee_id]
+    if params[:employee_id] != '0'
+      @department.employee_id = params[:employee_id]
+    end
+
     @department.save
 
     redirect_to '/department/index'

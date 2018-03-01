@@ -4,7 +4,7 @@ class EmployeeController < ApplicationController
   end
 
   def add
-    @functions = Function.all
+    @departments = Department.all
   end
 
   skip_before_action :verify_authenticity_token
@@ -20,7 +20,7 @@ class EmployeeController < ApplicationController
     @employee.name = params[:name]
     @employee.birth = params[:birth]
     @employee.salary = params[:salary]
-    @employee.function_id = params[:function_id]
+    @employee.department_id = params[:department_id]
     @employee.save
 
     redirect_to '/employee/index'
@@ -28,7 +28,7 @@ class EmployeeController < ApplicationController
 
   def edit
     @employee = Employee.find(params[:id])
-    @functions = Function.all
+    @departments = Department.all
   end
 
   def delete

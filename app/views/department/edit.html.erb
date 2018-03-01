@@ -7,6 +7,7 @@
   <input type="text" name="name" value="<%= @department.name %>"><br>
   Gerente<br>
   <select name="employee_id">
+    <option value="0">.: SELECIONE :.</option>
     <% @employees.each do |employee| -%>
       <% if @department.employee_id == employee.id %>
         <option value="<%= employee.id %>" selected="selected" > <%= employee.name %> </option>
@@ -19,6 +20,11 @@
   <br><br>
 
   <input type="submit" value="Salvar">
+  <a href="/department/index">
+    <button>
+      Departamentos
+    </button>
+  </a>
 </form>
 
 

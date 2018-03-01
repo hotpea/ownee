@@ -5,6 +5,7 @@
   <input type="text" name="name"><br>
   Gerente<br>
   <select name="employee_id">
+    <option value="0">.: SELECIONE :.</option>
     <% @employees.each do |employee| -%>
       <option value="<%= employee.id %>"> <%= employee.name %> </option>
     <% end %>
@@ -13,6 +14,11 @@
   <br><br>
 
   <input type="submit" value="Salvar">
+  <a href="/department/index">
+    <button>
+      Departamentos
+    </button>
+  </a>
 </form>
 
 

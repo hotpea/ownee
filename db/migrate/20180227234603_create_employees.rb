@@ -4,7 +4,7 @@ class CreateEmployees < ActiveRecord::Migration[5.1]
       t.string :name
       t.date :birth
       t.float :salary
-      t.references :function, foreign_key: true
+      t.references :department, foreign_key: true
 
       t.timestamps
     end

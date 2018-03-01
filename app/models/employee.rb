@@ -1,3 +1,3 @@
 class Employee < ApplicationRecord
-  belongs_to :function
+  belongs_to :department
 end

@@ -1,5 +1,6 @@
 class GeneralController < ApplicationController
   def index
-    @post = {:teste => 'teste'}.inspect
+    @data = Employee.joins(:department).group(:department).sum(:salary)
+    @allDepartmentsSum = Employee.joins(:department).sum(:salary)
   end
 end

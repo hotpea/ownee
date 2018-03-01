@@ -10,21 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227234603) do
+ActiveRecord::Schema.define(version: 20180227235889) do
+
+  create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.integer "employee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_departments_on_employee_id"
+  end
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.date "birth"
     t.float "salary"
-    t.integer "function_id"
+    t.integer "department_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["function_id"], name: "index_employees_on_function_id"
+    t.index ["department_id"], name: "index_employees_on_department_id"
   end
 
   create_table "functions", force: :cascade do |t|
     t.string "name"
-    t.boolean "function_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

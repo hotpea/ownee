@@ -6,7 +6,7 @@
     <th>Nome</th>
     <th>Data de Nascimento</th>
     <th>Salário</th>
-    <th>Cargo</th>
+    <th>Departamento</th>
     <th>Ações</th>
   </tr>
   <% @employees.each do |employee| -%>
@@ -15,7 +15,7 @@
       <td><%= employee.name %></td>
       <td><%= employee.birth %></td>
       <td><%= employee.salary %></td>
-      <td><%= employee.function.name %></td>
+      <td><%= employee.department.name %></td>
       <td>
         <a href="/employee/edit/<%= employee.id %>">
           <button>
