@@ -40,3 +40,11 @@ tr:nth-child(even) {
     border-bottom: 1px solid #333333;
     border-left: 1px solid #CCCCCC;
 }
+
+.error {
+    color: red
+}
+
+.msg {
+    color: green;
+}

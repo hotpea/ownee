@@ -8,7 +8,7 @@
   Data de nascimento<br>
   <input type="date" name="birth" value="<%= @employee.birth %>"><br>
   Salário<br>
-  <input type="number" min="0.00" max="10000.00" step="0.01" name="salary" value="<%= @employee.salary %>" ><br>
+  <input type="number" min="0.00" max="100000.00" step="0.01" name="salary" value="<%= @employee.salary %>" ><br>
   Departamento<br>
   <select name="department_id">
     <option value="0"> .: SELECIONE :. </option>
@@ -20,7 +20,13 @@
       <% end %>
     <% end %>
   </select>
-  <br><br>
+
+  <br>
+  <label class="error"><%= flash[:error] %></label>
+  <br>
+  <label class="msg"><%= flash[:msg] %></label>
+  <br>
+
   <input type="submit" value="Salvar">
   <a href="/employee/index">
     <button>
